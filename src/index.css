@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@300;400;500;600;700;800;900&family=Noto+Sans:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 30 100% 97%;
+    --foreground: 25 60% 12%;
+
+    --card: 30 60% 96%;
+    --card-foreground: 25 60% 12%;
+
+    --popover: 30 100% 97%;
+    --popover-foreground: 25 60% 12%;
+
+    --primary: 25 100% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 25 70% 22%;
+    --secondary-foreground: 30 100% 97%;
+
+    --muted: 30 30% 90%;
+    --muted-foreground: 25 20% 45%;
+
+    --accent: 122 46% 33%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 30 30% 82%;
+    --input: 30 30% 82%;
+    --ring: 25 100% 50%;
+
+    --radius: 0.75rem;
+
+    --earth: 25 70% 22%;
+    --earth-foreground: 30 100% 97%;
+    --crop: 122 46% 33%;
+    --crop-foreground: 0 0% 100%;
+    --sky: 30 100% 94%;
+    --saffron: 25 100% 50%;
+    --saffron-glow: 30 100% 60%;
+    --gold: 40 95% 55%;
+
+    --sidebar-background: 30 40% 95%;
+    --sidebar-foreground: 25 60% 12%;
+    --sidebar-primary: 25 100% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 122 46% 33%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 30 30% 82%;
+    --sidebar-ring: 25 100% 50%;
+  }
+
+  .dark {
+    --background: 260 60% 8%;
+    --foreground: 40 80% 92%;
+
+    --card: 260 50% 12%;
+    --card-foreground: 40 80% 92%;
+
+    --popover: 260 50% 12%;
+    --popover-foreground: 40 80% 92%;
+
+    --primary: 25 100% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 40 95% 55%;
+    --secondary-foreground: 260 60% 8%;
+
+    --muted: 260 30% 18%;
+    --muted-foreground: 40 20% 65%;
+
+    --accent: 122 46% 33%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 260 30% 20%;
+    --input: 260 30% 20%;
+    --ring: 40 95% 55%;
+
+    --earth: 40 95% 55%;
+    --earth-foreground: 260 60% 8%;
+    --crop: 122 46% 40%;
+    --crop-foreground: 0 0% 100%;
+    --sky: 260 40% 15%;
+    --saffron: 25 100% 50%;
+    --saffron-glow: 30 100% 60%;
+    --gold: 40 95% 55%;
+
+    --sidebar-background: 260 50% 10%;
+    --sidebar-foreground: 40 80% 92%;
+    --sidebar-primary: 40 95% 55%;
+    --sidebar-primary-foreground: 260 60% 8%;
+    --sidebar-accent: 122 46% 33%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 260 30% 20%;
+    --sidebar-ring: 40 95% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Noto Sans Devanagari', 'Noto Sans', sans-serif;
+    font-weight: 700;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Noto Sans Devanagari', 'Noto Sans', sans-serif;
+    font-weight: 800;
+  }
+  .font-body {
+    font-family: 'Noto Sans', 'Noto Sans Devanagari', sans-serif;
+  }
+}
+
+/* Wheat field animations */
+@keyframes sway {
+  0%, 100% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
+}
+
+@keyframes sway-slow {
+  0%, 100% { transform: rotate(-2deg) translateX(-5px); }
+  50% { transform: rotate(2deg) translateX(5px); }
+}
+
+@keyframes float-up {
+  0% { transform: translateY(0) translateX(0); opacity: 0.8; }
+  100% { transform: translateY(-100vh) translateX(20px); opacity: 0; }
+}
+
+@keyframes sun-rise {
+  0% { transform: translateY(30px); opacity: 0.5; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes bird-fly {
+  0% { transform: translateX(-100px) translateY(0); }
+  25% { transform: translateX(0) translateY(-15px); }
+  50% { transform: translateX(100px) translateY(0); }
+  75% { transform: translateX(200px) translateY(-10px); }
+  100% { transform: translateX(110vw) translateY(5px); }
+}
+
+@keyframes ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes tractor-drive {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100vw); }
+}
+
+@keyframes grow-up {
+  0% { transform: scaleY(0); transform-origin: bottom; }
+  100% { transform: scaleY(1); transform-origin: bottom; }
+}
+
+.animate-sway {
+  animation: sway 3s ease-in-out infinite;
+}
+
+.animate-sway-slow {
+  animation: sway-slow 4s ease-in-out infinite;
+}
+
+.animate-float-up {
+  animation: float-up 6s linear infinite;
+}
+
+.animate-sun-rise {
+  animation: sun-rise 2s ease-out forwards;
+}
+
+.animate-bird {
+  animation: bird-fly 12s linear infinite;
+}
+
+.animate-ticker {
+  animation: ticker 30s linear infinite;
+}
+
+.animate-tractor {
+  animation: tractor-drive 8s linear infinite;
+}
+
+/* Wave divider */
+.wave-divider {
+  position: relative;
+  overflow: hidden;
+}
+
+.wave-divider::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 60'%3E%3Cpath fill='%23FFF3E0' d='M0,30 C360,60 720,0 1080,30 C1260,45 1380,20 1440,30 L1440,60 L0,60 Z'/%3E%3C/svg%3E") no-repeat bottom;
+  background-size: cover;
+}
+
+/* Card tilt glow */
+.tilt-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tilt-card:hover {
+  box-shadow: 0 20px 40px -12px hsl(var(--saffron) / 0.3);
+}
+
+/* Noise texture */
+.noise-bg {
+  position: relative;
+}
+
+.noise-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+/* Marquee */
+.marquee-container {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* Mobile bottom nav */
+.bottom-nav {
+  box-shadow: 0 -4px 20px hsl(var(--earth) / 0.1);
+}
+
+/* Indian number format helper - visual only */
+.price-highlight {
+  background: linear-gradient(135deg, hsl(var(--saffron) / 0.1), hsl(var(--gold) / 0.1));
+  border-left: 3px solid hsl(var(--saffron));
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: hsl(var(--muted)); }
+::-webkit-scrollbar-thumb { background: hsl(var(--saffron) / 0.4); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: hsl(var(--saffron) / 0.6); }
